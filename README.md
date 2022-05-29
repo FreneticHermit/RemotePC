@@ -1,2 +1,2 @@
 # RemotePC
-The application lets you can control your pc using phone
+The application lets you control your pc using phone
