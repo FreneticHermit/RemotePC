@@ -13,6 +13,7 @@ class Server:
         self.client_socket=None
         self.addr=None
         self.disconnected=False
+        webbrowser.register('chrome',None,webbrowser.BackgroundBrowser(r"C:\Users\user\AppData\Local\Google\Chrome\Application\chrome.exe"))
     def start_server(self):
         self.server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.server_socket.bind((get_ip(), variables().port))
@@ -36,9 +37,9 @@ class Server:
         return format_mac
     def link_func(self,data):
         if len(data.split(":")) > 1:
-            webbrowser.open(data)
+            webbrowser.get("chrome").open(data)
         else:
-            webbrowser.open(f'https:{data}')
+            webbrowser.get("chrome").open(f'https:{data}')
     def execute_func(self,data):
         os.system(f'"{data.upper()}"')
     def power_func(self,data):
